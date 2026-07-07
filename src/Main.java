@@ -5,6 +5,9 @@ import adapter.ServicoEnvioAntigo;
 import decorator.MensagemUrgente;
 import factory.Canal;
 import factory.CanalFactory;
+import strategy.EnvioAgendado;
+import strategy.EnvioImediato;
+import strategy.EstrategiaEnvio;
 
 public class Main {
     public static void main(String[] args) {
@@ -68,6 +71,27 @@ public class Main {
         System.out.printf("\n");
 
         System.out.printf("===============================================");
+
+        System.out.printf("\n");
+        System.out.printf("\n");
+
+        System.out.printf("5 - Strategy");
+        System.out.printf("\n");
+
+        EstrategiaEnvio modoAtual = new EnvioImediato();
+
+        modoAtual.processarEnvio("Alerta de teste");
+
+        System.out.printf("\n");
+
+        modoAtual = new EnvioAgendado();
+        modoAtual.processarEnvio("Alerta de teste");
+
+        System.out.printf("\n");
+        System.out.printf("\n");
+
+        System.out.printf("===============================================");
+
 
     }
 }
