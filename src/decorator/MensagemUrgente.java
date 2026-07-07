@@ -9,7 +9,8 @@ public class MensagemUrgente extends MensagemDecorator{
         super(mensagemDecorada);
     }
 
-    public void exibirUrgente() {
+    @Override
+    public void exibir() {
         System.out.printf("ALERTA: MENSAGEM URGENTE\n");
 
         super.exibir();
