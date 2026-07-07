@@ -1,5 +1,6 @@
 import Builder.Mensagem;
 import Builder.MensagemBuilder;
+import decorator.MensagemUrgente;
 import factory.Canal;
 import factory.CanalFactory;
 
@@ -26,6 +27,21 @@ public class Main {
 
         Canal meuCanal = factory.criarCanal("SMS");
         meuCanal.enviar("Olá, o código funciona");
+
+        System.out.printf("\n");
+
+        System.out.printf("===============================================");
+
+        System.out.printf("\n");
+        System.out.printf("\n");
+
+        System.out.printf("3 - Decorator");
+
+        Mensagem msgNormal = new MensagemBuilder().de("Vinicius").para("João").comTexto("Decorator feito").build();
+
+        MensagemUrgente mensagemUrgente = new MensagemUrgente(msgNormal);
+
+        mensagemUrgente.exibir();
 
         System.out.printf("\n");
 
