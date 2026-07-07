@@ -5,6 +5,8 @@ import adapter.ServicoEnvioAntigo;
 import decorator.MensagemUrgente;
 import factory.Canal;
 import factory.CanalFactory;
+import observer.SistemaEnvio;
+import observer.Usuario;
 import strategy.EnvioAgendado;
 import strategy.EnvioImediato;
 import strategy.EstrategiaEnvio;
@@ -91,7 +93,25 @@ public class Main {
         System.out.printf("\n");
 
         System.out.printf("===============================================");
+        System.out.printf("\n");
 
+        System.out.printf("6 - Observer");
+
+        SistemaEnvio sistema = new SistemaEnvio();
+        Usuario user1 = new Usuario("Vinicius");
+
+        Usuario user2 = new Usuario("Joao (Professor)");
+
+
+        sistema.registrarObservador(user1);
+        sistema.registrarObservador(user2);
+
+        sistema.dispararNotificacao("Projeto postado no GitHub!");
+
+        System.out.printf("\n");
+        System.out.printf("\n");
+
+        System.out.printf("===============================================");
 
     }
 }
