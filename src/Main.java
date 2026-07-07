@@ -1,5 +1,7 @@
 import Builder.Mensagem;
 import Builder.MensagemBuilder;
+import factory.Canal;
+import factory.CanalFactory;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,7 +13,23 @@ public class Main {
                 comTexto("Segue a atividade de recuperação.").build();
         msg.exibir();
 
-        System.out.printf("===============================================");
         System.out.printf("\n");
+
+        System.out.printf("===============================================");
+
+        System.out.printf("\n");
+        System.out.printf("\n");
+
+        System.out.printf("2 - Factory");
+
+        CanalFactory factory = new CanalFactory();
+
+        Canal meuCanal = factory.criarCanal("SMS");
+        meuCanal.enviar("Olá, o código funciona");
+
+        System.out.printf("\n");
+
+        System.out.printf("===============================================");
+
     }
 }
